@@ -24,8 +24,6 @@ public class FileReader {
                 mapProfile.put(arrKeyVal[indKey].trim(), arrKeyVal[indVal].trim());
                 line = bufferedReader.readLine();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
