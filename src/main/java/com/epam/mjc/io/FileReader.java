@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class FileReader {
 
-    public Profile getDataFromFile(File file) {
+        public Profile getDataFromFile(File file) {
         String splitter = ":";
         String keyName = "Name";
         String keyAge = "Age";
@@ -20,9 +20,8 @@ public class FileReader {
                 String [] arrKeyVal;
                 final int indKey = 0;
                 final int indVal = 1;
-                System.out.println(line);
                 arrKeyVal = line.split(splitter);
-                mapProfile.put(arrKeyVal[indKey], arrKeyVal[indVal]);
+                mapProfile.put(arrKeyVal[indKey].trim(), arrKeyVal[indVal].trim());
                 line = bufferedReader.readLine();
             }
         } catch (FileNotFoundException e) {
@@ -31,9 +30,9 @@ public class FileReader {
             e.printStackTrace();
         }
         return new Profile(mapProfile.get(keyName),
-                           Integer.parseInt(mapProfile.get(keyAge).trim()),
-                           mapProfile.get(keyEmail),
-                           Long.parseLong(mapProfile.get(keyPhone).trim()));
+                Integer.parseInt(mapProfile.get(keyAge)),
+                mapProfile.get(keyEmail),
+                Long.parseLong(mapProfile.get(keyPhone)));
     }
     
 }
