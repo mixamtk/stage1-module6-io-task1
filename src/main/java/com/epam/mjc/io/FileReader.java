@@ -35,5 +35,5 @@ public class FileReader {
                            mapProfile.get(keyEmail),
                            Long.parseLong(mapProfile.get(keyPhone).trim()));
     }
-    }
+    
 }
